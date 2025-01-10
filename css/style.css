@@ -6,15 +6,17 @@ body {
   height: 100vh;
   background-color: #000;
 }
-
 .slideshow {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 97%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  display: flex; /* Align images in a row */
+  /* height: 300px; */
+  border: 1px solid #ccc; /* Optional: for visual debugging */
 }
-
 .slide {
   position: absolute;
   top: 0;
@@ -23,8 +25,16 @@ body {
   height: 100%;
   object-fit: cover;
   display: none;
+  flex: 1 1 auto; /* Allow slides to shrink when the container shrinks */
+  /* object-fit: contain;  */
+  transition: transform 0.5s ease; /* Smooth transition for active slide scaling */
 }
-
 .slide.active {
   display: block;
+  transform: scale(1.1); /* Optional: Make the active slide stand out */
+}
+.bgWhite {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
 }
